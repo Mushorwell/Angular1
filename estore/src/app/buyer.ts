@@ -10,7 +10,7 @@ export class Buyer implements User {
   'password' = '';
   'phoneNumber' = '';
   'userType' = 'Buyer';
-  'address' = (): Address => ({
+  'address': Address = {
     id: 0,
     streetName: '',
     streetNumber: 0,
@@ -18,9 +18,9 @@ export class Buyer implements User {
     postalCode: '',
     city: '',
     province: ''
-  })
+  };
 
-  fullName(): string {
+  fullName(): string|null {
     return this.firstName + ' ' + this.lastName;
   }
 }

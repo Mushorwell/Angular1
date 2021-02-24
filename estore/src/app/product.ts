@@ -5,5 +5,5 @@ export class Product {
   'productCategory': string = '';
   'productQuantity': number = 0;
   'productPrice': number = 0;
-  'tags': string = '';
+  'tags': string|null = '';
 }
