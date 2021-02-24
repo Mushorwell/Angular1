@@ -1,12 +1,13 @@
+import { StoreUser } from './store-user';
 import { Product } from './product';
 import { Seller } from './seller';
 import { Buyer } from './buyer';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Address } from './address';
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { isThisTypeNode } from 'typescript';
 
-export class EstoreData implements InMemoryWebApiModule {
+export class EstoreData implements InMemoryDbService {
   createDb() {
     const addresses: Address[] = [
       {
@@ -74,69 +75,6 @@ export class EstoreData implements InMemoryWebApiModule {
       },
     ];
 
-    const buyers: Buyer[] = [
-      {
-        id: 1,
-        firstName: 'Malcolm',
-        nickName: 'Malcolm',
-        lastName: 'Gwenyambira',
-        email: 'malcolm@mail.com',
-        password: 'malcolm123',
-        phoneNumber: '0721234567',
-        userType: 'Buyer',
-        address: addresses[0],
-        fullName: () => 'Malcolm Gwenyambira'
-      },
-      {
-        id: 2,
-        firstName: 'Gwen',
-        nickName: 'Gwen',
-        lastName: 'Bosch',
-        email: 'gwen@mail.com',
-        password: 'gwen123',
-        phoneNumber: '0712345678',
-        userType: 'Buyer',
-        address: addresses[1],
-        fullName: () => 'Gwen Bosch'
-      },
-      {
-        id: 3,
-        firstName: 'Lusanda',
-        nickName: 'Lulu',
-        lastName: 'Dube',
-        email: 'lulu@mail.com',
-        password: 'lu123lu',
-        phoneNumber: '0123456789',
-        userType: 'Buyer',
-        address: addresses[3],
-        fullName: () => 'Lusanda Dube'
-      },
-      {
-        id: 4,
-        firstName: 'Mandla',
-        nickName: 'Manny',
-        lastName: 'Zulu',
-        email: 'manny@mail.com',
-        password: 'manzul123',
-        phoneNumber: '0213456789',
-        userType: 'Buyer',
-        address: addresses[4],
-        fullName: () => 'Mandla Zulu'
-      },
-      {
-        id: 5,
-        firstName: 'Andile',
-        nickName: 'Firsky',
-        lastName: 'Zuma',
-        email: 'firsky@mail.com',
-        password: 'andil123',
-        phoneNumber: '0312456789',
-        userType: 'Buyer',
-        address: addresses[5],
-        fullName: () => 'Andile Zuma'
-      },
-    ];
-
     const products: Product[] = [
       {
         id: 1,
@@ -176,6 +114,7 @@ export class EstoreData implements InMemoryWebApiModule {
       },
     ];
 
+    // create sellers
     const sellers: Seller[] = [
       {
         id: 1,
@@ -189,7 +128,7 @@ export class EstoreData implements InMemoryWebApiModule {
         fullName: () => 'Mike Smith'
       },
       {
-        id: 1,
+        id: 2,
         firstName: 'John',
         lastName: 'Smith',
         email: 'john@smith.com',
@@ -200,7 +139,7 @@ export class EstoreData implements InMemoryWebApiModule {
         fullName: () => 'John Smith'
       },
       {
-        id: 1,
+        id: 3,
         firstName: 'Dumisane',
         lastName: 'Pukuza',
         email: 'dumi@pukuza.com',
@@ -211,7 +150,7 @@ export class EstoreData implements InMemoryWebApiModule {
         fullName: () => 'Dumisane Pukuza'
       },
       {
-        id: 1,
+        id: 4,
         firstName: 'Jabu',
         lastName: 'Jameson',
         email: 'jabu@jameson.com',
@@ -222,5 +161,71 @@ export class EstoreData implements InMemoryWebApiModule {
         fullName: () => 'Jabu Jameson'
       },
     ];
+    // create buyers
+    const buyers: Buyer[] = [
+      {
+        id: 5,
+        firstName: 'Malcolm',
+        nickName: 'Malcolm',
+        lastName: 'Gwenyambira',
+        email: 'malcolm@mail.com',
+        password: 'malcolm123',
+        phoneNumber: '0721234567',
+        userType: 'Buyer',
+        address: addresses[0],
+        fullName: () => 'Malcolm Gwenyambira'
+      },
+      {
+        id: 6,
+        firstName: 'Gwen',
+        nickName: 'Gwen',
+        lastName: 'Bosch',
+        email: 'gwen@mail.com',
+        password: 'gwen123',
+        phoneNumber: '0712345678',
+        userType: 'Buyer',
+        address: addresses[1],
+        fullName: () => 'Gwen Bosch'
+      },
+      {
+        id: 7,
+        firstName: 'Lusanda',
+        nickName: 'Lulu',
+        lastName: 'Dube',
+        email: 'lulu@mail.com',
+        password: 'lu123lu',
+        phoneNumber: '0123456789',
+        userType: 'Buyer',
+        address: addresses[3],
+        fullName: () => 'Lusanda Dube'
+      },
+      {
+        id: 8,
+        firstName: 'Mandla',
+        nickName: 'Manny',
+        lastName: 'Zulu',
+        email: 'manny@mail.com',
+        password: 'manzul123',
+        phoneNumber: '0213456789',
+        userType: 'Buyer',
+        address: addresses[4],
+        fullName: () => 'Mandla Zulu'
+      },
+      {
+        id: 9,
+        firstName: 'Andile',
+        nickName: 'Firsky',
+        lastName: 'Zuma',
+        email: 'firsky@mail.com',
+        password: 'andil123',
+        phoneNumber: '0312456789',
+        userType: 'Buyer',
+        address: addresses[5],
+        fullName: () => 'Andile Zuma'
+      },
+    ];
+    // add all buyers and sellers to storeUsers
+    const storeUsers: StoreUser[] = [...buyers, ...sellers];
+    return { addresses, products, storeUsers, buyers, sellers };
   }
 }

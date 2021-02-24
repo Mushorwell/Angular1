@@ -1,0 +1,47 @@
+<div class="card col-md-12">
+  <h1>Product List</h1>
+  <div class='row'>
+    <div class='col-md-2'>Filter by:</div>
+    <div class='col-md-4'>
+      <input type='text'
+             [(ngModel)]='listFilter' />
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-6'>
+      <h4>Filtered by: {{listFilter}}</h4>
+    </div>
+  </div>
+  <div class='table-responsive'>
+    <table class='table'
+           *ngIf='products && products.length'>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Available</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let product of filteredProducts'>
+          <td>
+            <a [routerLink]="['/products', product.id]">
+              {{ product.productName }}
+            </a>
+          </td>
+          <td>{{ product.productDescription }}</td>
+          <td>{{ product.productQuantity }}</td>
+          <td>{{ product.productPrice | currency:'ZAR':'symbol':'1.2-2' }}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm"
+                    [routerLink]="['/products', product.id, 'edit']">
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
