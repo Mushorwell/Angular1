@@ -1,5 +1,5 @@
 import { AppData } from './app-data';
-import { EstoreData } from './estore-data';
+import { EstoreData } from './server/data/estore-data';
 import { RouterModule, Routes } from '@angular/router';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,12 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { WelcomeComponent } from './client/welcome/welcome.component';
+import { LoginComponent } from './client/auth/login/login.component';
+import { RegisterComponent } from './client/auth/register/register.component';
 import { FormsModule } from '@angular/forms';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductListComponent } from './client/product-list/product-list.component';
+import { ProductEditComponent } from './client/product-edit/product-edit.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},

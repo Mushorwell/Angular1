@@ -1,5 +1,5 @@
-import { EstoreService } from './../estore.service';
-import { Product } from './../product';
+import { EstoreService } from '../../server/services/estore.service';
+import { Product } from '../../server/data/classes/product';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { catchError } from 'rxjs/operators';

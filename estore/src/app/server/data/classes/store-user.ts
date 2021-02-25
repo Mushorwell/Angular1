@@ -1,5 +1,5 @@
 import { Address } from './address';
-import { User } from './user';
+import { User } from '../interfaces/user';
 import { Product } from './product';
 
 export class StoreUser implements User{

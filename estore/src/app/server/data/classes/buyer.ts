@@ -1,4 +1,4 @@
-import { User } from './user';
+import { User } from '../interfaces/user';
 import { Address } from './address';
 
 export class Buyer implements User {

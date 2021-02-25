@@ -1,9 +1,9 @@
-import { StoreUser } from './store-user';
-import { Product } from './product';
-import { Seller } from './seller';
-import { Buyer } from './buyer';
+import { StoreUser } from './classes/store-user';
+import { Product } from './classes/product';
+import { Seller } from './classes/seller';
+import { Buyer } from './classes/buyer';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Address } from './address';
+import { Address } from './classes/address';
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { isThisTypeNode } from 'typescript';
 

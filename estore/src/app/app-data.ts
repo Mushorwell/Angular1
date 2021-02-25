@@ -1,6 +1,6 @@
-import { ProductData } from './product-data';
-import { StoreUserData } from './user-data';
-import { AddressData } from './address-data';
+import { ProductData } from './server/data/product-data';
+import { StoreUserData } from './server/data/user-data';
+import { AddressData } from './server/data/address-data';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class AppData implements InMemoryDbService {

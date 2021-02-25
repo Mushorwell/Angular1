@@ -1,8 +1,8 @@
-import { Buyer } from './buyer';
-import { Seller } from './seller';
-import { Address } from './address';
-import { Product } from './product';
-import { StoreUser } from './store-user';
+import { Buyer } from '../data/classes/buyer';
+import { Seller } from '../data/classes/seller';
+import { Address } from '../data/classes/address';
+import { Product } from '../data/classes/product';
+import { StoreUser } from '../data/classes/store-user';
 
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';

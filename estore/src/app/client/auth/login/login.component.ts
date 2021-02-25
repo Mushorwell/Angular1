@@ -1,5 +1,5 @@
-import { StoreUser } from './../store-user';
-import { EstoreService } from './../estore.service';
+import { StoreUser } from '../../../server/data/classes/store-user';
+import { EstoreService } from '../../../server/services/estore.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SignatureKind } from 'typescript';

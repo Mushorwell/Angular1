@@ -1,4 +1,4 @@
-import { User } from './user';
+import { User } from '../interfaces/user';
 import { Product } from './product';
 
 export class Seller implements User {

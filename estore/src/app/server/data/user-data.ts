@@ -1,4 +1,4 @@
-import { StoreUser } from './store-user';
+import { StoreUser } from './classes/store-user';
 
 export class StoreUserData {
 

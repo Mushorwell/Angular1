@@ -1,4 +1,4 @@
-import { Address } from './address';
+import { Address } from './classes/address';
 
 export class AddressData {
 
