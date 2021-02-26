@@ -15,15 +15,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './client/product-list/product-list.component';
 import { ProductEditComponent } from './client/product-edit/product-edit.component';
 import { NavbarComponent } from './client/Navbar/navbar/navbar.component';
+import { ProductComponent } from './client/product/product.component';
+import { RegisterGuard } from './client/product-edit/register.guard';
+import { ProductEditGuard } from './client/product-edit/product-edit.guard';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {
+    path: 'register',
+    canDeactivate: [RegisterGuard],
+    component: RegisterComponent,
+  },
   {path: 'welcome', component: WelcomeComponent},
   {path: 'products', component: ProductListComponent},
   {path: 'products/0', component: ProductEditComponent},
-  {path: 'products/:product.id/edit', component: ProductEditComponent}
+  {path: 'products/:id', component: ProductComponent},
+  {
+    path: 'products/:id/edit',
+    component: ProductEditComponent,
+    canDeactivate: [ProductEditGuard]
+  }
 ]
 
 @NgModule({
@@ -34,7 +46,8 @@ const routes: Routes = [
     RegisterComponent,
     ProductListComponent,
     ProductEditComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

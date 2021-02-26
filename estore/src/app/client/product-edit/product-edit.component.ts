@@ -1,6 +1,7 @@
+import { Subscription } from 'rxjs';
 import { EstoreService } from './../../server/services/estore.service';
 import { Product } from './../../server/data/classes/product';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -9,30 +10,39 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './product-edit.component.html',
   styleUrls: ['./product-edit.component.css']
 })
-export class ProductEditComponent implements OnInit {
+export class ProductEditComponent implements OnInit, OnDestroy {
   pageTitle = 'Product Edit';
   productForm: FormGroup;
   product: Product;
+  private subscription: Subscription;
   // categories: ProductCategory[];
   errorMessage: string;
 
-  constructor(private fb: FormBuilder,
-              private route: ActivatedRoute,
-              private router: Router,
-              private productService: EstoreService) {
-  }
+  constructor(private fb: FormBuilder, private route: ActivatedRoute,
+              private router: Router, private productService: EstoreService) {  }
 
   ngOnInit(): void {
-    // Read the parameter from the route
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.productService.getProduct(id).subscribe({
-      next: loadProduct => {
-        this.product =loadProduct;
-        console.log(JSON.stringify(this.product));
-        this.displayProduct();
-      },
-      error: err => this.errorMessage = err
-    });
+
+    this.subscription = this.route.paramMap.subscribe(
+      params => {
+        const id = +params.get('id');
+        console.log(id);
+        this.productService.getProduct(id).subscribe({
+          next: loadProduct => {
+            this.product =loadProduct;
+            console.log(JSON.stringify(this.product));
+            this.displayProduct();
+          },
+          error: err => this.errorMessage = err
+        });
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.subscription.unsubscribe();
   }
 
   displayProduct(): void {

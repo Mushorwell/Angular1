@@ -25,6 +25,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
   filteredProducts: Product[];
   products: Product[] = [];
   private subscription: Subscription;
+  loggedInUser = localStorage.getItem('userProfile');
+
 
   constructor(private productService: EstoreService) { }
 

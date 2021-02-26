@@ -34,8 +34,13 @@
           <td>{{ product.productQuantity }}</td>
           <td>{{ product.productPrice | currency:'ZAR':'symbol':'1.2-2' }}</td>
           <td>
-            <button class="btn btn-outline-primary btn-sm"
-                    [routerLink]="['/products', product.id, 'edit']">
+            <button class="btn btn-outline-success btn-sm list-routes"
+                    [routerLink]="['/products', product.id]">
+              Details
+            </button>
+            <button class="btn btn-outline-primary btn-sm list-routes"
+                    [routerLink]="['/products', product.id, 'edit']"
+                    *ngIf='loggedInUser'>
               Edit
             </button>
           </td>
