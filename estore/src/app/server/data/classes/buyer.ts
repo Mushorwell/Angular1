@@ -10,15 +10,15 @@ export class Buyer implements User {
   'password' = '';
   'phoneNumber' = '';
   'userType' = 'Buyer';
-  'address': Address = {
+  'address': Address[] = [{
     id: 0,
-    streetName: '',
+    streetAddress1: '',
     streetNumber: 0,
     area: '',
     postalCode: '',
     city: '',
     province: ''
-  };
+  }];
 
   fullName(): string|null {
     return this.firstName + ' ' + this.lastName;

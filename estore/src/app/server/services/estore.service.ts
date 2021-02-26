@@ -167,7 +167,9 @@ export class EstoreService {
     // Return an initialized object
     return {
       id: 0,
-      streetName: null,
+      addressType: null,
+      streetAddress1: null,
+      streetAddress2: null,
       streetNumber: null,
       area: null,
       postalCode: null,
@@ -201,7 +203,6 @@ export class EstoreService {
       userType: null,
       address: null,
       items: null,
-      fullName: null
     };
   }
 }

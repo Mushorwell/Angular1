@@ -1,3 +1,83 @@
-<div class="card col-md-12">
+<div class="card col-md-12" *ngIf='!activeUser'>
 <h1>Welcome to ESTORE</h1>
+</div>
+<div class="card col-md-12" *ngIf='activeUser'>
+  <h1>Welcome {{activeUser.firstName}} {{activeUser.lastName}}</h1>
+  <br>
+  <tr>
+    <td><b>Nick Name:</b></td>
+    <td>{{activeUser.nickName}}</td>
+  </tr>
+  <tr>
+    <td><b>email:        </b></td>
+    <td>{{activeUser.email}}</td>
+  </tr>
+  <tr>
+    <td><b>Phone:        </b></td>
+    <td>{{activeUser.phoneNumber}}</td>
+  </tr>
+  <tr>
+    <td><b>User:        </b></td>
+    <td>{{activeUser.userType}}</td>
+  </tr>
+  <tr>
+    <table class='table'
+           *ngIf="activeUser.userType === 'Buyer' && activeUser.address">
+      <thead>
+        <tr>
+          <th>Address Type</th>
+          <th>Line 1</th>
+          <th>Number</th>
+          <th>Area</th>
+          <th>Code</th>
+          <th>City</th>
+          <th>Province</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of activeUser.address'>
+          <td>
+              {{ item.addressType }}
+          </td>
+          <td>{{ item.streetAddress1 }}</td>
+          <td>{{ item.streetNumber }}</td>
+          <td>{{ item.area }}</td>
+          <td>{{ item.postalCode }}</td>
+          <td>{{ item.province }}</td>
+          <td>{{ item.city }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </tr>
+  <tr>
+    <table class='table'
+           *ngIf="activeUser.userType === 'Seller' && activeUser.items">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Description</th>
+          <th>Available</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of activeUser.items'>
+          <td>
+            <a [routerLink]="['/products', item.id]">
+              {{ item.productName }}
+            </a>
+          </td>
+          <td>{{ item.productDescription }}</td>
+          <td>{{ item.productQuantity }}</td>
+          <td>{{ item.productPrice | currency:'ZAR':'symbol':'1.2-2' }}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm"
+                    [routerLink]="['/products', item.id, 'edit']">
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </tr>
 </div>

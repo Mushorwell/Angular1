@@ -16,7 +16,7 @@ export class ProductData {
         id: 2,
         productName: 'Dell 15" Display',
         productDescription: 'High quality resolution display',
-        productCategory: 'Computer Accessory',
+        productCategory: 'Computers',
         productQuantity: 3,
         productPrice: 1099.90,
         tags: ''
@@ -25,7 +25,7 @@ export class ProductData {
         id: 3,
         productName: '48" HDTV',
         productDescription: 'Hi-Quality Smart TV / Display',
-        productCategory: 'Electronics',
+        productCategory: 'Entertainment',
         productQuantity: 5,
         productPrice: 8500.00,
         tags: ''
@@ -34,10 +34,19 @@ export class ProductData {
         id: 4,
         productName: 'Samsung Dishwasher',
         productDescription: 'Ultra-fresh dishwasher that removes stains, cleans and sanitizes utensils.',
-        productCategory: 'Kitchn',
+        productCategory: 'Kitchen',
         productQuantity: 3,
         productPrice: 5199.90,
         tags: ''
       },
+      {
+        id: 5,
+        productName: 'Sony Dishwasher',
+        productDescription: 'Powerful turbo dishwasher that removes stains, cleans and sanitizes utensils.',
+        productCategory: 'Kitchen',
+        productQuantity: 3,
+        productPrice: 6079.90,
+        tags: ''
+      }
     ];
   }

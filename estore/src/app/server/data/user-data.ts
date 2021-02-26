@@ -1,4 +1,7 @@
+import { AddressData } from './address-data';
+import { ProductData } from './product-data';
 import { StoreUser } from './classes/store-user';
+import { Product } from './classes/product';
 
 export class StoreUserData {
 
@@ -12,16 +15,10 @@ export class StoreUserData {
       password: '123456',
       phoneNumber: '0654123789',
       userType: 'Seller',
-      items: {
-        id: 1,
-        productName: 'Acer E1-576',
-        productDescription: '13" Laptop, compact for carrying around and working on the move.',
-        productCategory: 'Computers',
-        productQuantity: 5,
-        productPrice: 3500.00,
-        tags: ''
-      },
-      fullName: () => 'Mike Smith'
+      items: [ProductData.products[0]]
+      // fullName():string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
     {
       id: 2,
@@ -31,16 +28,10 @@ export class StoreUserData {
       password: '123456',
       phoneNumber: '0654123987',
       userType: 'Seller',
-      items: {
-        id: 2,
-        productName: 'Dell 15" Display',
-        productDescription: 'High quality resolution display',
-        productCategory: 'Computer Accessory',
-        productQuantity: 3,
-        productPrice: 1099.90,
-        tags: ''
-      },
-      fullName: () => 'John Smith'
+      items: [ProductData.products[1]]
+      // fullName():string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
     {
       id: 3,
@@ -50,16 +41,10 @@ export class StoreUserData {
       password: '123456',
       phoneNumber: '0654321789',
       userType: 'Seller',
-      items: {
-        id: 3,
-        productName: '48" HDTV',
-        productDescription: 'Hi-Quality Smart TV / Display',
-        productCategory: 'Electronics',
-        productQuantity: 5,
-        productPrice: 8500.00,
-        tags: ''
-      },
-      fullName: () => 'Dumisane Pukuza'
+      items: [ProductData.products[2]]
+      // fullName():string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
     {
       id: 4,
@@ -69,16 +54,10 @@ export class StoreUserData {
       password: '123456',
       phoneNumber: '0614523789',
       userType: 'Seller',
-      items: {
-        id: 4,
-        productName: 'Samsung Dishwasher',
-        productDescription: 'Ultra-fresh dishwasher that removes stains, cleans and sanitizes utensils.',
-        productCategory: 'Kitchn',
-        productQuantity: 3,
-        productPrice: 5199.90,
-        tags: ''
-      },
-      fullName: () => 'Jabu Jameson'
+      items: [ProductData.products[3], ProductData.products[4]]
+      // fullName():string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
     {
       id: 5,
@@ -89,16 +68,10 @@ export class StoreUserData {
       password: 'malcolm123',
       phoneNumber: '0721234567',
       userType: 'Buyer',
-      address: {
-        id: 1,
-        streetName: '1st Street',
-        streetNumber: 15,
-        area: 'Area1',
-        postalCode: '1234',
-        city: 'City1',
-        province: 'Province1'
-      },
-      fullName: () => 'Malcolm Gwenyambira'
+      address: [AddressData.addresses[0]]
+      // fullName():string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
     {
       id: 6,
@@ -109,16 +82,10 @@ export class StoreUserData {
       password: 'gwen123',
       phoneNumber: '0712345678',
       userType: 'Buyer',
-      address: {
-        id: 2,
-        streetName: '11th Street',
-        streetNumber: 23,
-        area: 'Area3',
-        postalCode: '1324',
-        city: 'City2',
-        province: 'Province1'
-      },
-      fullName: () => 'Gwen Bosch'
+      address: [AddressData.addresses[1]]
+      // fullName(): string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
     {
       id: 7,
@@ -129,16 +96,10 @@ export class StoreUserData {
       password: 'lu123lu',
       phoneNumber: '0123456789',
       userType: 'Buyer',
-      address: {
-        id: 3,
-        streetName: '2nd Street',
-        streetNumber: 1,
-        area: 'Area1',
-        postalCode: '1234',
-        city: 'City1',
-        province: 'Province1'
-      },
-      fullName: () => 'Lusanda Dube'
+      address: [AddressData.addresses[2]]
+      // fullName(): string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
     {
       id: 8,
@@ -149,16 +110,10 @@ export class StoreUserData {
       password: 'manzul123',
       phoneNumber: '0213456789',
       userType: 'Buyer',
-      address: {
-        id: 4,
-        streetName: '1st Street',
-        streetNumber: 1,
-        area: 'Area1',
-        postalCode: '1234',
-        city: 'City1',
-        province: 'Province1'
-      },
-      fullName: () => 'Mandla Zulu'
+      address: [AddressData.addresses[3],AddressData.addresses[4], AddressData.addresses[5]]
+      // fullName():string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
     {
       id: 9,
@@ -169,16 +124,10 @@ export class StoreUserData {
       password: 'andil123',
       phoneNumber: '0312456789',
       userType: 'Buyer',
-      address: {
-        id: 5,
-        streetName: '5th Street',
-        streetNumber: 25,
-        area: 'Area16',
-        postalCode: '2321',
-        city: 'City4',
-        province: 'Province5'
-      },
-      fullName: () => 'Andile Zuma'
+      address: [AddressData.addresses[6]]
+      // fullName():string{
+      //   return this.firstName + ' ' + this.lastName;
+      // }
     },
   ];
   }

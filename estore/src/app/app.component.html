@@ -1,46 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand mb-0 h1" href="#">ESTORE</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link active"
-        [routerLink]="['welcome']" routerlinkactive="active"
-        >Welcome <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerlinkactive="active"
-              [routerLink]="['register']">Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"
-        [routerLink]="['login']" routerlinkactive="active"
-        >Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"
-        [routerLink]="['products']" routerlinkactive="active"
-        >Product List</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"
-        [routerLink]="['/products/0']" routerlinkactive="active"
-        >New Product</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
+<app-navbar></app-navbar>
 <br/>
 <br/>
-<br><br>
 
 <div class="container">
   <div>
-    <router-outlet></router-outlet>
+    <router-outlet (refreshNav)='refreshNavbar($event)'></router-outlet>
   </div>
 
 </div>

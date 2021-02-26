@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { ResourceLoader } from '@angular/compiler';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'estore';
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+
+  }
+
+  refreshNavbar(refreshNav){
+    this.ngOnInit();
+  }
+
 }

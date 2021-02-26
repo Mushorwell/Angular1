@@ -5,7 +5,7 @@ export class AddressData {
     static addresses: Address[] = [
       {
         id: 1,
-        streetName: '1st Street',
+        streetAddress1: '1st Street',
         streetNumber: 15,
         area: 'Area1',
         postalCode: '1234',
@@ -14,7 +14,7 @@ export class AddressData {
       },
       {
         id: 2,
-        streetName: '11th Street',
+        streetAddress1: '11th Street',
         streetNumber: 23,
         area: 'Area3',
         postalCode: '1324',
@@ -23,7 +23,7 @@ export class AddressData {
       },
       {
         id: 3,
-        streetName: '2nd Street',
+        streetAddress1: '2nd Street',
         streetNumber: 1,
         area: 'Area1',
         postalCode: '1234',
@@ -32,7 +32,7 @@ export class AddressData {
       },
       {
         id: 4,
-        streetName: '1st Street',
+        streetAddress1: '1st Street',
         streetNumber: 1,
         area: 'Area1',
         postalCode: '1234',
@@ -41,7 +41,7 @@ export class AddressData {
       },
       {
         id: 5,
-        streetName: '5th Street',
+        streetAddress1: '5th Street',
         streetNumber: 25,
         area: 'Area16',
         postalCode: '2321',
@@ -50,7 +50,7 @@ export class AddressData {
       },
       {
         id: 6,
-        streetName: '14th Street',
+        streetAddress1: '14th Street',
         streetNumber: 24,
         area: 'Area17',
         postalCode: '2325',
@@ -59,7 +59,7 @@ export class AddressData {
       },
       {
         id: 7,
-        streetName: '18th Street',
+        streetAddress1: '18th Street',
         streetNumber: 22,
         area: 'Area6',
         postalCode: '1234',

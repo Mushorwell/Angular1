@@ -9,18 +9,20 @@ export class StoreUser implements User{
   'nickName'?:string|null = '';
   'email' = '';
   'password' = '';
-  'phoneNumber' = '';
+  'phoneNumber':string = '';
   'userType' = '';
-  'address'?: Address|null = {
+  'address'?: Address[]|null = [{
     id: 0,
-    streetName: '',
+    addressType: '',
+    streetAddress1: '',
+    streetAddress2: '',
     streetNumber: 0,
     area: '',
     postalCode: '',
     city: '',
     province: ''
-  };
-  'items'?: Product|null = {
+  }];
+  'items'?: Product[]|null = [{
     id: 0,
     productName: '',
     productDescription: '',
@@ -28,7 +30,7 @@ export class StoreUser implements User{
     productQuantity: 0,
     productPrice: 0,
     tags: ''
-  };
+  }];
 
-  fullName(): string|null { return this.firstName + ' ' + this.lastName; }
+  // fullName(): string|null { return this.firstName + ' ' + this.lastName; }
 }

@@ -9,7 +9,7 @@ export class Seller implements User {
   'password' = '';
   'phoneNumber' = '';
   'userType' = 'Seller';
-  'items': Product = {
+  'items': Product[] = [{
     id: 0,
     productName: '',
     productDescription: '',
@@ -17,7 +17,7 @@ export class Seller implements User {
     productQuantity: 0,
     productPrice: 0,
     tags: ''
-  };
+  }];
 
   fullName(): string|null { return this.firstName + ' ' + this.lastName; }
 }

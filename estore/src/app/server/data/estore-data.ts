@@ -12,7 +12,7 @@ export class EstoreData implements InMemoryDbService {
     const addresses: Address[] = [
       {
         id: 1,
-        streetName: '1st Street',
+        streetAddress1: '1st Street',
         streetNumber: 15,
         area: 'Area1',
         postalCode: '1234',
@@ -21,7 +21,7 @@ export class EstoreData implements InMemoryDbService {
       },
       {
         id: 2,
-        streetName: '11th Street',
+        streetAddress1: '11th Street',
         streetNumber: 23,
         area: 'Area3',
         postalCode: '1324',
@@ -30,7 +30,7 @@ export class EstoreData implements InMemoryDbService {
       },
       {
         id: 3,
-        streetName: '2nd Street',
+        streetAddress1: '2nd Street',
         streetNumber: 1,
         area: 'Area1',
         postalCode: '1234',
@@ -39,7 +39,7 @@ export class EstoreData implements InMemoryDbService {
       },
       {
         id: 4,
-        streetName: '1st Street',
+        streetAddress1: '1st Street',
         streetNumber: 1,
         area: 'Area1',
         postalCode: '1234',
@@ -48,7 +48,7 @@ export class EstoreData implements InMemoryDbService {
       },
       {
         id: 5,
-        streetName: '5th Street',
+        streetAddress1: '5th Street',
         streetNumber: 25,
         area: 'Area16',
         postalCode: '2321',
@@ -57,7 +57,7 @@ export class EstoreData implements InMemoryDbService {
       },
       {
         id: 6,
-        streetName: '14th Street',
+        streetAddress1: '14th Street',
         streetNumber: 24,
         area: 'Area17',
         postalCode: '2325',
@@ -66,7 +66,7 @@ export class EstoreData implements InMemoryDbService {
       },
       {
         id: 7,
-        streetName: '18th Street',
+        streetAddress1: '18th Street',
         streetNumber: 22,
         area: 'Area6',
         postalCode: '1234',
@@ -124,7 +124,7 @@ export class EstoreData implements InMemoryDbService {
         password: '123456',
         phoneNumber: '0654123789',
         userType: 'Seller',
-        items: products[1],
+        items: [products[1]],
         fullName: () => 'Mike Smith'
       },
       {
@@ -135,7 +135,7 @@ export class EstoreData implements InMemoryDbService {
         password: '123456',
         phoneNumber: '0654123987',
         userType: 'Seller',
-        items: products[2],
+        items: [products[2]],
         fullName: () => 'John Smith'
       },
       {
@@ -146,7 +146,7 @@ export class EstoreData implements InMemoryDbService {
         password: '123456',
         phoneNumber: '0654321789',
         userType: 'Seller',
-        items: products[0],
+        items: [products[0]],
         fullName: () => 'Dumisane Pukuza'
       },
       {
@@ -157,7 +157,7 @@ export class EstoreData implements InMemoryDbService {
         password: '123456',
         phoneNumber: '0614523789',
         userType: 'Seller',
-        items: products[3],
+        items: [products[3]],
         fullName: () => 'Jabu Jameson'
       },
     ];
@@ -172,7 +172,7 @@ export class EstoreData implements InMemoryDbService {
         password: 'malcolm123',
         phoneNumber: '0721234567',
         userType: 'Buyer',
-        address: addresses[0],
+        address: [addresses[0]],
         fullName: () => 'Malcolm Gwenyambira'
       },
       {
@@ -184,7 +184,7 @@ export class EstoreData implements InMemoryDbService {
         password: 'gwen123',
         phoneNumber: '0712345678',
         userType: 'Buyer',
-        address: addresses[1],
+        address: [addresses[1]],
         fullName: () => 'Gwen Bosch'
       },
       {
@@ -196,7 +196,7 @@ export class EstoreData implements InMemoryDbService {
         password: 'lu123lu',
         phoneNumber: '0123456789',
         userType: 'Buyer',
-        address: addresses[3],
+        address: [addresses[3]],
         fullName: () => 'Lusanda Dube'
       },
       {
@@ -208,7 +208,7 @@ export class EstoreData implements InMemoryDbService {
         password: 'manzul123',
         phoneNumber: '0213456789',
         userType: 'Buyer',
-        address: addresses[4],
+        address: [addresses[4]],
         fullName: () => 'Mandla Zulu'
       },
       {
@@ -220,7 +220,7 @@ export class EstoreData implements InMemoryDbService {
         password: 'andil123',
         phoneNumber: '0312456789',
         userType: 'Buyer',
-        address: addresses[5],
+        address: [addresses[5]],
         fullName: () => 'Andile Zuma'
       },
     ];

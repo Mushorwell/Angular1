@@ -11,16 +11,19 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './client/welcome/welcome.component';
 import { LoginComponent } from './client/auth/login/login.component';
 import { RegisterComponent } from './client/auth/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductListComponent } from './client/product-list/product-list.component';
 import { ProductEditComponent } from './client/product-edit/product-edit.component';
+import { NavbarComponent } from './client/Navbar/navbar/navbar.component';
 
 const routes: Routes = [
+  {path: '', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'welcome', component: WelcomeComponent},
   {path: 'products', component: ProductListComponent},
-  {path: 'products/0', component: ProductEditComponent}
+  {path: 'products/0', component: ProductEditComponent},
+  {path: 'products/:product.id/edit', component: ProductEditComponent}
 ]
 
 @NgModule({
@@ -30,15 +33,16 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     ProductListComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(AppData),
     RouterModule.forRoot(routes),
-    FormsModule
-
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

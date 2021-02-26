@@ -1,3 +1,4 @@
+import { StoreUser } from './../../server/data/classes/store-user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
+  activeUser: StoreUser;
+
   constructor() { }
 
   ngOnInit() {
+    this.activeUser = JSON.parse(localStorage.getItem('userProfile'));
+    console.log(this.activeUser);
   }
 
 }

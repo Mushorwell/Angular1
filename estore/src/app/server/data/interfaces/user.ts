@@ -7,5 +7,5 @@ export interface User {
   'phoneNumber': string;
   'userType': string;
 
-  fullName:() => string;
+  // fullName(): string;
 }
